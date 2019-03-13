@@ -17,7 +17,6 @@ Route::get('/', function () {
 
 Route::get('hello','HelloController@index');
 
-Route::get('keijibanlara','KeijibanController@index');
-Route::get('keijibanlara/{name?}/{msg?}','KeijibanController@index');
-Route::post('keijibanlara','KeijibanController@post');
+Route::get('keijibanlaravel','KeijibanController@index');
+Route::post('keijibanlaravel','KeijibanController@post');
 
