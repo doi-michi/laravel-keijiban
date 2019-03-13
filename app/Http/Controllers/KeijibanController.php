@@ -9,7 +9,7 @@ class KeijibanController extends Controller
    public function index(){
        return view('keijibanlaravel.index');
    }
-   public function post(Request $request){
+   public function get(Request $request){
        $msg = $request->msg;
        $name = $request->name;
        $data =[

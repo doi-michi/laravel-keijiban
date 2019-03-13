@@ -5,13 +5,12 @@
     <h1>１人掲示板</h1>
     @isset($msg)
     <p>{{$name}}</p>
-  gi  <p>{{$msg}}</p>
+    <p>{{$msg}}</p>
     @else
     <p>１回だけ投稿できます。変更済み</p>
     @endisset
-    <form method="POST" action="/keijibanlaravel">
+    <form method="GET">
       {{csrf_field() }}
-
 
       <p>
         <label for ="namae">Name<br></label>
