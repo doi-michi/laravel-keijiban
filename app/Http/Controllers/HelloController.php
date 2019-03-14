@@ -7,8 +7,18 @@ use Illuminate\Http\Request;
 class HelloController extends Controller
 {
   
-    public function index(){
-      return view('hello.index',['message'=>'Hello!']);
+    public function index(Request $request){
+      return view('hello.index',['msg'=>'フォームを入力：']);
+    }
+
+    public function post(Request $request){
+      $validata_rule=[
+        'name'=>'required',
+        'mail'=>'email',
+        'age'=>'numeric|between:0,150',
+      ];
+      $this->validate($request,$validata_rule);
+      return view('hello.index',['msg'=>'正しく入力されました！']);
     }
 
 

@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 class KeijibanController extends Controller
 {
    public function index(){
-       return view('keijibanlaravel.index');
+       return view('keijiban_laravel.index');
    }
-   public function get(Request $request){
+   public function store(Request $request){
        $msg = $request->msg;
        $name = $request->name;
        $data =[
@@ -17,6 +17,6 @@ class KeijibanController extends Controller
            'msg' => $msg,
        ];
        
-       return view('keijibanlaravel.index',$data);
+       return view('keijiban_laravel.index',$data);
    }
 }
