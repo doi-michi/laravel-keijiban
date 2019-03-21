@@ -10,14 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use App\Http\Middleware\HelloMiddleware;
 Route::get('/', function () {
     return view('welcome');
   });
 
-Route::get('hello','HelloController@index');
-
-Route::get('keijibanlara','KeijibanController@index');
-Route::get('keijibanlara/{name?}/{msg?}','KeijibanController@index');
-Route::post('keijibanlara','KeijibanController@post');
+  Route::get('keijiban_laravel','KeijibanController@index');
+  Route::post('keijiban_laravel','KeijibanController@store');
+  
+  Route::get('hello','HelloController@index');
+  Route::post('hello','HelloController@post');
+  Route::get('hello','HelloController@index')
+    ->middleware('helo');
 
